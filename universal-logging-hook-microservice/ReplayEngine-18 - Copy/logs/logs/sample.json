@@ -1,0 +1,5 @@
+[
+  {"timestamp": "2025-10-19T10:00:00Z", "level": "INFO",  "message": "Event 1",         "request_id": "abc123"},
+  {"timestamp": "2025-10-19T10:00:01Z", "level": "ERROR", "message": "Bug: timeout",     "request_id": "abc123"},
+  {"timestamp": "2025-10-19T10:00:02Z", "level": "INFO",  "message": "Event 2",         "request_id": "def456"}
+]

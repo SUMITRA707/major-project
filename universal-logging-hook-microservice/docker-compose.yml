@@ -1,0 +1,46 @@
+services:
+  fluentd:
+    image: fluent/fluentd:v1.16-debian-1
+    ports:
+      - "9880:9880"
+    volumes:
+      - logging-logs:/fluentd/log
+      - ./universal-logging-hook-microservice/fluent.conf:/tmp/fluent.conf
+    command: sh -c "cp /tmp/fluent.conf /fluentd/etc/fluent.conf && fluentd -c /fluentd/etc/fluent.conf"
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+  juice-shop:
+    image: bkimminich/juice-shop
+    ports:
+      - "3000:3000"
+  replay-engine:
+    build: ./ReplayEngine-18
+    depends_on:
+      - fluentd
+    volumes:
+      - logging-logs:/app/logs:ro
+      - ./ReplayEngine-18/output:/app/output
+    ports:
+      - "8080:8080"
+
+volumes:
+  logging-logs:  # Named volume for logs (avoids path issues)
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+  juice-shop:
+    image: bkimminich/juice-shop
+    ports:
+      - "3000:3000"
+  replay-engine:
+    build: ./ReplayEngine-18
+    depends_on:
+      - fluentd
+    volumes:
+      - ./universal-logging-hook-microservice/logs:/app/logs:ro
+      - ./ReplayEngine-18/output:/app/output
+    ports:
+      - "8080:8080"
