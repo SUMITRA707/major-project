@@ -1,6 +1,0 @@
-pattern: 'logs/events.log*'
-checkpoint: 'logs/replay.checkpoint.json'
-errlog: 'logs/replay.errors.log'
-html_report: 'reports/bug_report.html'
-timeout_threshold: 5.0
-max_sleep: 5.0
