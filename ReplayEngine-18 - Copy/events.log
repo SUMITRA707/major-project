@@ -1,7 +1,0 @@
-{"timestamp":"2025-10-04T10:00:00Z","event_type":"login","amount":0,"level":"INFO","source":"auth-service","message":"User login successful","correlationId":"req-101"}
-{"timestamp":"2025-10-04T10:00:02Z","event_type":"fetch_cart","amount":0,"level":"INFO","source":"cart-service","message":"Cart fetched","correlationId":"req-101"}
-{"timestamp":"2025-10-04T10:00:03Z","event_type":"payment_request","amount":500,"level":"ERROR","source":"payment-service","message":"Database connection timeout","correlationId":"req-101"}
-{"timestamp":"2025-10-04T10:00:09Z","event_type":"inventory_check","amount":0,"level":"INFO","source":"inventory-service","message":"Stock query","correlationId":"req-102"}
-{"timestamp":"2025-10-04T10:00:16Z","event_type":"order_request","amount":1200,"level":"EXCEPTION","source":"order-service","message":"Null pointer exception","correlationId":"req-103"}
-{"timestamp":"2025-10-04T10:00:20Z","event_type":"payment_request","amount":700,"level":"INFO","source":"payment-service","message":"Payment successful","correlationId":"req-104"}
-{"timestamp":"2025-10-04T10:00:50Z","event_type":"delayed_event","amount":0,"level":"INFO","source":"scheduler","message":"Background job executed"}
