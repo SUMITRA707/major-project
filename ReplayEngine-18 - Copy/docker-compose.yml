@@ -1,0 +1,11 @@
+services:
+  replay-engine:
+    build: .
+    volumes:
+      - ./logs:/app/logs  # Mount logs folder for input
+      - ./output:/app/output  # Output for reports
+    ports:
+      - "8080:8080"  # For HTML report access
+    environment:
+      - INPUT_DIR=/app/logs
+      - OUTPUT_DIR=/app/output
